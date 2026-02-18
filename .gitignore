@@ -1,0 +1,12 @@
+# Scratch and temporary files
+scratch/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Sensitive data (just in case)
+*.key
+*.pem
+*.env.local
+secrets/
