@@ -36,7 +36,7 @@ Sections:
 ---
 
 ## Style Rules
-- concise bullets
+- bullets/subtitles with no more than 1 paragraph of description
 - causal reasoning
 - highlight what moved markets
 - avoid headlines without analysis
