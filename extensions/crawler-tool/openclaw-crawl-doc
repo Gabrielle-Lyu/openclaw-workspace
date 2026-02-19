@@ -25,16 +25,56 @@ def fetch(url: str) -> str:
     return r.text
 
 
+def strip_boilerplate_html(html: str) -> str:
+    """Strip common boilerplate/wrapper tags before conversion."""
+    # Remove script/style blocks entirely
+    html = re.sub(r'<script[^>]*>.*?</script>', '', html, flags=re.DOTALL | re.IGNORECASE)
+    html = re.sub(r'<style[^>]*>.*?</style>', '', html, flags=re.DOTALL | re.IGNORECASE)
+    
+    # Remove empty wrapper divs/spans (common UI chrome)
+    html = re.sub(r'<div[^>]*>\s*</div>', '', html, flags=re.IGNORECASE)
+    html = re.sub(r'<span[^>]*>\s*</span>', '', html, flags=re.IGNORECASE)
+    
+    # Strip attributes from remaining tags (keep tag structure for pandoc)
+    html = re.sub(r'<(div|span|p|ul|ol|li|h[1-6]|table|tr|td|th|a|strong|em|code|pre)\s+[^>]*>', r'<\1>', html, flags=re.IGNORECASE)
+    
+    return html
+
+
+def clean_markdown(md: str) -> str:
+    """Post-process markdown to remove residual HTML."""
+    # Remove any remaining HTML tags
+    md = re.sub(r'</?div[^>]*>', '', md, flags=re.IGNORECASE)
+    md = re.sub(r'</?span[^>]*>', '', md, flags=re.IGNORECASE)
+    md = re.sub(r'</?nav[^>]*>', '', md, flags=re.IGNORECASE)
+    md = re.sub(r'</?header[^>]*>', '', md, flags=re.IGNORECASE)
+    md = re.sub(r'</?footer[^>]*>', '', md, flags=re.IGNORECASE)
+    
+    # Remove excessive blank lines
+    md = re.sub(r'\n{3,}', '\n\n', md)
+    
+    return md.strip()
+
+
 def html_to_md(clean_html: str) -> str:
+    # Pre-clean HTML
+    clean_html = strip_boilerplate_html(clean_html)
+    
     p = subprocess.run(
-        ["pandoc", "-f", "html", "-t", "gfm"],
+        ["pandoc", "-f", "html", "-t", "gfm", "--wrap=none"],
         input=clean_html.encode(),
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
     )
     if p.returncode != 0:
         raise RuntimeError(f"pandoc failed: {p.stderr.decode(errors='ignore')}")
-    return p.stdout.decode(errors="ignore")
+    
+    md = p.stdout.decode(errors="ignore")
+    
+    # Post-clean markdown
+    md = clean_markdown(md)
+    
+    return md
 
 
 def crawl_one(url: str, out_dir: str, filename: str | None = None) -> str:
