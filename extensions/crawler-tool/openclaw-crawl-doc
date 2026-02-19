@@ -1,60 +1,120 @@
 #!/usr/bin/env python3
-import requests, os, re, datetime, subprocess, sys
-from readability import Document
+import argparse
+import datetime
+import os
+import re
+import subprocess
+import sys
 from urllib.parse import urlparse
 
-OUT_DIR = "/home/ubuntu/openclaw-knowledge/inbox/dropzone"
+import requests
+from readability import Document
 
-def slug(s):
+DEFAULT_OUT_DIR = "/home/ubuntu/openclaw-knowledge/inbox/dropzone"
+
+
+def slug(s: str) -> str:
     s = s.lower()
-    s = re.sub(r"[^a-z0-9]+","-",s)
+    s = re.sub(r"[^a-z0-9]+", "-", s)
     return s.strip("-")[:80] or "doc"
 
-def fetch(url):
-    r = requests.get(url, timeout=20, headers={"User-Agent":"openclaw-crawler"})
+
+def fetch(url: str) -> str:
+    r = requests.get(url, timeout=25, headers={"User-Agent": "openclaw-crawler"})
     r.raise_for_status()
     return r.text
 
-def main():
-    if len(sys.argv)<2:
-        print("usage: openclaw-crawl-doc <url>")
-        return 1
 
-    url=sys.argv[1]
-    os.makedirs(OUT_DIR,exist_ok=True)
-
-    html=fetch(url)
-    doc=Document(html)
-
-    title=doc.short_title() or "untitled"
-    clean=doc.summary()
-
-    # convert html → md using pandoc
-    p=subprocess.run(
-        ["pandoc","-f","html","-t","gfm"],
-        input=clean.encode(),
-        stdout=subprocess.PIPE
+def html_to_md(clean_html: str) -> str:
+    p = subprocess.run(
+        ["pandoc", "-f", "html", "-t", "gfm"],
+        input=clean_html.encode(),
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
     )
-    md=p.stdout.decode()
+    if p.returncode != 0:
+        raise RuntimeError(f"pandoc failed: {p.stderr.decode(errors='ignore')}")
+    return p.stdout.decode(errors="ignore")
 
-    ts=datetime.datetime.utcnow().strftime("%Y%m%dT%H%M%SZ")
-    host=urlparse(url).netloc.replace(".","-")
 
-    filename=f"{ts}__{host}__{slug(title)}.md"
-    path=os.path.join(OUT_DIR,filename)
+def crawl_one(url: str, out_dir: str, filename: str | None = None) -> str:
+    html = fetch(url)
+    doc = Document(html)
 
-    front=f"""---
-title: "{title}"
-source: "{url}"
-fetched: "{ts}"
+    title = doc.short_title() or "untitled"
+    clean = doc.summary()
+    md = html_to_md(clean)
+
+    ts = datetime.datetime.utcnow().strftime("%Y%m%dT%H%M%SZ")
+    host = (urlparse(url).netloc or "unknown-host").replace(".", "-")
+
+    if filename:
+        out_name = filename if filename.endswith(".md") else f"{filename}.md"
+    else:
+        out_name = f"{ts}__{host}__{slug(title)}.md"
+
+    path = os.path.join(out_dir, out_name)
+
+    front = f"""---
+title: \"{title}\"
+source: \"{url}\"
+fetched: \"{ts}\"
 ---
 
 """
 
-    open(path,"w").write(front+md)
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(front + md)
 
-    print(path)
+    return path
 
-if __name__=="__main__":
-    main()
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Crawl one or many webpages into markdown files."
+    )
+    parser.add_argument("urls", nargs="+", help="One or more URLs separated by spaces")
+    parser.add_argument("--out-dir", default=DEFAULT_OUT_DIR, help="Output directory")
+    parser.add_argument(
+        "--filename",
+        default=None,
+        help="Optional output filename (only valid when a single URL is provided)",
+    )
+    return parser.parse_args()
+
+
+def main() -> int:
+    args = parse_args()
+    urls = args.urls
+    out_dir = args.out_dir
+    filename = args.filename
+
+    if filename and len(urls) > 1:
+        print("error: --filename can only be used with a single URL", file=sys.stderr)
+        return 2
+
+    os.makedirs(out_dir, exist_ok=True)
+
+    ok_paths = []
+    failed = []
+
+    for u in urls:
+        try:
+            p = crawl_one(u, out_dir, filename=filename)
+            ok_paths.append(p)
+        except Exception as e:
+            failed.append((u, str(e)))
+
+    for p in ok_paths:
+        print(p)
+
+    if failed:
+        for u, err in failed:
+            print(f"FAILED {u}: {err}", file=sys.stderr)
+        return 1
+
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
