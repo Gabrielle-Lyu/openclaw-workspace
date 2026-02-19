@@ -1,0 +1,10 @@
+{
+  "id": "crawler-tool",
+  "name": "Crawler Tool",
+  "description": "Run local webpage crawler script and emit markdown docs.",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  }
+}

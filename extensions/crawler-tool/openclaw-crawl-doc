@@ -1,0 +1,60 @@
+#!/usr/bin/env python3
+import requests, os, re, datetime, subprocess, sys
+from readability import Document
+from urllib.parse import urlparse
+
+OUT_DIR = "/home/ubuntu/openclaw-knowledge/inbox/dropzone"
+
+def slug(s):
+    s = s.lower()
+    s = re.sub(r"[^a-z0-9]+","-",s)
+    return s.strip("-")[:80] or "doc"
+
+def fetch(url):
+    r = requests.get(url, timeout=20, headers={"User-Agent":"openclaw-crawler"})
+    r.raise_for_status()
+    return r.text
+
+def main():
+    if len(sys.argv)<2:
+        print("usage: openclaw-crawl-doc <url>")
+        return 1
+
+    url=sys.argv[1]
+    os.makedirs(OUT_DIR,exist_ok=True)
+
+    html=fetch(url)
+    doc=Document(html)
+
+    title=doc.short_title() or "untitled"
+    clean=doc.summary()
+
+    # convert html → md using pandoc
+    p=subprocess.run(
+        ["pandoc","-f","html","-t","gfm"],
+        input=clean.encode(),
+        stdout=subprocess.PIPE
+    )
+    md=p.stdout.decode()
+
+    ts=datetime.datetime.utcnow().strftime("%Y%m%dT%H%M%SZ")
+    host=urlparse(url).netloc.replace(".","-")
+
+    filename=f"{ts}__{host}__{slug(title)}.md"
+    path=os.path.join(OUT_DIR,filename)
+
+    front=f"""---
+title: "{title}"
+source: "{url}"
+fetched: "{ts}"
+---
+
+"""
+
+    open(path,"w").write(front+md)
+
+    print(path)
+
+if __name__=="__main__":
+    main()
+
