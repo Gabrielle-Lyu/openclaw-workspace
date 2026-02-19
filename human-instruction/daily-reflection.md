@@ -1,4 +1,6 @@
-# Daily Reflection — YYYY-MM-DD
+# Daily Reflection Template
+
+**SAVE TO:** `~/openclaw-workspace/daily-reflections/YYYY-MM-DD-reflection.md` (use today's actual date)
 
 ## What happened today
 High-level summary of tasks completed, conversations had, decisions made.
