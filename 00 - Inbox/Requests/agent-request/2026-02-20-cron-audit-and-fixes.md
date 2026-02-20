@@ -43,6 +43,7 @@ Found **7 active cron jobs**, **5 need updating** for new workspace structure.
 /home/ubuntu/openclaw-workspace/00 - Inbox/Docs/_done
 /home/ubuntu/openclaw-workspace/20 - Knowledge/{Reference,Projects,Decisions,Context,Playbooks}
 ```
+Gabby: this fix is correct, do it. 
 
 ---
 
@@ -67,6 +68,7 @@ Save: /home/ubuntu/openclaw-workspace/10 - Journal/Reflections/YYYY-MM-DD-reflec
 ```
 
 **Note:** We already updated the playbook itself, but the cron job message still has old paths.
+Gabby: this fix is correct, do it. 
 
 ---
 
@@ -90,6 +92,8 @@ Save: /home/ubuntu/openclaw-workspace/10 - Journal/Reflections/YYYY-MM-DD-reflec
 ```
 
 **Question:** Do you want stock market and AI news reports, or do you prefer the separate market-intelligence and ai-daily-briefing jobs below? This seems like a duplicate.
+
+Gabby: market intelligence is the stock market report i want you to do. and ai news is the ai-daily-briefing. Keep only one for each. I prefer using the name stock-market-insight and ai-daily-briefing.
 
 ---
 
@@ -174,12 +178,16 @@ I can prepare the exact commands needed to update each job.
 ## Questions for You
 
 1. **Duplicate job?** Job #4 (Daily Market & AI Reports) vs Jobs #5+#6 - keep both or remove the duplicate?
+Gabby: remove duplicates
 
 2. **Delivery preferences?** 
    - daily-reflection: Currently tries to announce but failing - where should it deliver?
+   Gabby: 10 - Journal/Reflections
    - market/AI reports: Discord DM (user 276969555014975488) - still want this?
+   Gabby: yes, I still want discord push message about the summary for each report. 
 
 3. **Should I proceed with fixes?** Which option above do you prefer?
+   Gabby: option 2
 
 ---
 
