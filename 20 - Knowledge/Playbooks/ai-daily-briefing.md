@@ -55,7 +55,7 @@ include source link citation
 
 `~/openclaw-workspace/20 - Knowledge/Research/ai-daily-briefing/YYYY-MM-DD.md`
 
-2. Send report outline to Discord DM (sender 276969555014975488).
-
-3. Do not ask for confirmation.
+2. Do not ask for confirmation.
 Execute automatically.
+
+**Note:** Full report saved to file only. Combined highlights sent via Discord at 8:30 AM daily.
