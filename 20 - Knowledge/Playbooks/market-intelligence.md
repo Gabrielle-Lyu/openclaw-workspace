@@ -48,7 +48,7 @@ Sections:
 
 1. Save file to:
 
-`openclaw-workspace/research/market-intelligence/YYYY-MM-DD.md`
+`~/openclaw-workspace/20 - Knowledge/Research/stock-market-insight/YYYY-MM-DD.md`
 
 2. Send report outline to Discord DM (sender 276969555014975488).
 

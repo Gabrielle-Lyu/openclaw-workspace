@@ -53,7 +53,7 @@ include source link citation
 
 1. Save report as file:
 
-`openclaw-workspace/research/ai-daily-briefing/YYYY-MM-DD.md`
+`~/openclaw-workspace/20 - Knowledge/Research/ai-daily-briefing/YYYY-MM-DD.md`
 
 2. Send report outline to Discord DM (sender 276969555014975488).
 
