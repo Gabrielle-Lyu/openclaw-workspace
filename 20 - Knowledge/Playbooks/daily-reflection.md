@@ -2,6 +2,8 @@
 
 **SAVE TO:** `~/openclaw-workspace/10 - Journal/Reflections/YYYY-MM-DD-reflection.md` (use today's actual date)
 
+**MEMORY LOGS:** Daily activity logs go to `~/openclaw-workspace/10 - Journal/Daily/YYYY-MM-DD.md`
+
 ## What happened today
 High-level summary of tasks completed, conversations had, decisions made.
 
