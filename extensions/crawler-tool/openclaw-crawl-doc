@@ -10,7 +10,7 @@ from urllib.parse import urlparse
 import requests
 from readability import Document
 
-DEFAULT_OUT_DIR = "/home/ubuntu/openclaw-knowledge/inbox/dropzone"
+DEFAULT_OUT_DIR = "/home/ubuntu/openclaw-workspace/00 - Inbox/Docs/dropzone"
 
 
 def slug(s: str) -> str:
