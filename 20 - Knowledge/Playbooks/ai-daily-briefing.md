@@ -5,6 +5,39 @@ Run every day at 08:10 PST.
 ## Objective
 Collect and summarize the latest global AI industry developments from the last 24 hours.
 
+## Research Strategy
+
+**Multi-Angle Search Approach:**
+
+Run **3 parallel searches** with different angles to get comprehensive coverage:
+
+1. **General AI News:**
+   ```
+   query: "AI news today latest developments 2024"
+   count: 10
+   freshness: pd (past day)
+   ```
+
+2. **Model Updates:**
+   ```
+   query: "GPT Claude Gemini AI model updates today"
+   count: 10
+   freshness: pd
+   ```
+
+3. **Industry Announcements:**
+   ```
+   query: "AI industry announcements breakthroughs today"
+   count: 10
+   freshness: pd
+   ```
+
+**Why this works:**
+- Different queries capture different aspects (news outlets, tech blogs, research releases)
+- Running in parallel = faster
+- 10 results per query = broad coverage without noise
+- `freshness: pd` = only past 24 hours
+
 ## Sources
 - major news outlets
 - research labs
