@@ -44,7 +44,7 @@
 ## Other Locations
 
 - **System config:** `/home/ubuntu/.openclaw/workspace/` (AGENTS.md, SOUL.md, etc.)
-- **Human instructions:** `/home/ubuntu/.openclaw/workspace/human-instruction/`
+- **Playbooks (task instructions):** `/home/ubuntu/openclaw-workspace/20 - Knowledge/Playbooks/`
 - **Skills:** `/home/ubuntu/.openclaw/workspace/skills/`
 
 ---
