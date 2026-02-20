@@ -9,9 +9,9 @@ Automated workflow for ingesting and organizing web content.
        ↓
 2. processing/      ← Claw moves here while organizing
        ↓
-3. Knowledge/       ← Filed to appropriate Reference/Research folder
+3. Knowledge/       ← Renamed & filed to appropriate Reference/Research folder
        ↓
-4. _done/           ← Original moved here after filing
+4. _done/           ← Processing reports only (no file duplicates)
 ```
 
 ## How It Works
@@ -35,9 +35,9 @@ Automated workflow for ingesting and organizing web content.
   - `20 - Knowledge/Playbooks/` - Guides/tutorials
 
 ### 4. Done
-- **Purpose:** Archive of processed files
-- **Retention:** Keep for audit trail
-- **Cleanup:** Periodic (monthly)
+- **Purpose:** Processing reports and logs only
+- **Content:** Summary reports of what was filed where
+- **No duplicates:** Original files are renamed/moved to Knowledge, not copied
 
 ## Commands
 

@@ -22,12 +22,12 @@ The `crawl_doc` tool:
 crawl_doc(url) 
   ↓ 
 00 - Inbox/Docs/dropzone/
-  ↓ (you process: read, organize, categorize)
+  ↓ (move to processing while working)
 00 - Inbox/Docs/processing/
-  ↓ (you move to appropriate Knowledge subfolder)
+  ↓ (rename & move to appropriate Knowledge subfolder)
 20 - Knowledge/Reference/
-  ↓ (original moved to done)
-00 - Inbox/Docs/_done/
+  ↓ (log processing report)
+00 - Inbox/Docs/_done/ (reports only, no file duplicates)
 ```
 
 ## Usage
@@ -84,7 +84,8 @@ After crawling:
    - OpenClaw docs → `20 - Knowledge/Reference/openclaw/`
    - Research/learning → `20 - Knowledge/Research/{topic}/`
    - Tutorial/guide → `20 - Knowledge/Playbooks/`
-4. **Move original to _done/** after filing
+4. **Rename & move to destination** (clean filename, no timestamp prefix)
+5. **Create processing report** in _done/ (optional, for batch processing)
 
 ## Output Format
 
