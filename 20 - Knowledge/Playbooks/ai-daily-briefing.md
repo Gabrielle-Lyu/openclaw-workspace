@@ -84,16 +84,25 @@ include source link citation
 
 ## Delivery Instructions
 
-1. Save report as file:
+**1. Save full report to file:**
 
-`~/openclaw-workspace/20 - Knowledge/Research/ai-daily-briefing/YYYY-MM-DD.md`
+Path: `/home/ubuntu/openclaw-vault/20 - Knowledge/Research/ai-daily-briefing/YYYY-MM-DD.md`
 
-2. Post summary to Discord:
-   - Channel: #ai-news (ClawValley server)
-   - Channel ID: 1474308824914464880
-   - Format: 3-5 key headlines, each as a concise paragraph (not bullets)
+**2. Post summary to Discord automatically:**
 
-3. Do not ask for confirmation.
-Execute automatically.
+Use the `message` tool with these exact parameters:
+```
+action: send
+channel: discord
+target: 1474308824914464880
+message: [summary with 5-7 key headlines as concise paragraphs]
+```
 
-**Note:** Full report saved to file. Summary posted to #ai-news channel on ClawValley Discord server.
+Format the summary as:
+- Title: "## 🤖 AI Daily Briefing (YYYY-MM-DD)"
+- 5-7 key headlines, each as **bold title** followed by concise paragraph
+- End with: "Full report: `/home/ubuntu/openclaw-vault/20 - Knowledge/Research/ai-daily-briefing/YYYY-MM-DD.md`"
+
+**3. Do NOT ask for confirmation. Execute both steps automatically.**
+
+This is a scheduled task - complete delivery (file + Discord post) without waiting for approval.
