@@ -8,9 +8,19 @@ Entry point for new information and requests.
 Items for daily review and action:
 
 - **`human-request/`** - Your asks, tasks, and requests for Claw
+  - Active requests in root folder
+  - Completed requests → `processed-request/` (with summary)
+  
 - **`agent-request/`** - Claw's suggestions, questions, and proposals for you
+  - Pending requests in root folder
+  - Resolved requests → `processed-request/` (with resolution)
 
 **Review frequency:** Every morning during daily routine
+
+**Completion workflow:**
+1. Complete the request
+2. Add completion summary to the request file
+3. Move file to `processed-request/` subfolder
 
 ---
 
