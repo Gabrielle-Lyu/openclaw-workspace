@@ -50,11 +50,16 @@ Sections:
 
 `~/openclaw-workspace/20 - Knowledge/Research/stock-market-insight/YYYY-MM-DD.md`
 
-2. If markets closed:
-Output:
+2. Post summary to Discord:
+   - Channel: #market-insights (ClawValley server)
+   - Channel ID: 1474308765682499666
+   - Format: Brief summary with key highlights (3-5 bullet points max)
+
+3. If markets closed:
+Output to Discord:
 `Markets closed — no major movement.`
 
-3. Do not ask for confirmation.
+4. Do not ask for confirmation.
 Execute automatically.
 
-**Note:** Full report saved to file only. Combined highlights sent via Discord at 8:30 AM daily.
+**Note:** Full report saved to file. Summary posted to #market-insights channel on ClawValley Discord server.

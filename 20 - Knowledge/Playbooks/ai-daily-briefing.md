@@ -55,7 +55,12 @@ include source link citation
 
 `~/openclaw-workspace/20 - Knowledge/Research/ai-daily-briefing/YYYY-MM-DD.md`
 
-2. Do not ask for confirmation.
+2. Post summary to Discord:
+   - Channel: #ai-news (ClawValley server)
+   - Channel ID: 1474308824914464880
+   - Format: Brief summary with key headlines (3-5 bullet points max)
+
+3. Do not ask for confirmation.
 Execute automatically.
 
-**Note:** Full report saved to file only. Combined highlights sent via Discord at 8:30 AM daily.
+**Note:** Full report saved to file. Summary posted to #ai-news channel on ClawValley Discord server.
