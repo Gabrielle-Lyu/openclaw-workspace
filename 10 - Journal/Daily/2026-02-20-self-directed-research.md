@@ -82,8 +82,8 @@ For each request:
 ## 📂 File Locations
 
 **Playbooks:**
-- `/home/ubuntu/openclaw-workspace/20 - Knowledge/Playbooks/evening-reflection-requests.md`
-- `/home/ubuntu/openclaw-workspace/20 - Knowledge/Playbooks/morning-request-processing.md`
+- `/home/ubuntu/openclaw-vault/20 - Knowledge/Playbooks/evening-reflection-requests.md`
+- `/home/ubuntu/openclaw-vault/20 - Knowledge/Playbooks/morning-request-processing.md`
 
 **Daily Outputs:**
 - **Requests:** `30 - Automation/Logs/tomorrow-focus-YYYY-MM-DD.md`

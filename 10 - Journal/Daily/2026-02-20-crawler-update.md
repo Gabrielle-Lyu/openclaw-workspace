@@ -6,13 +6,13 @@ Update crawler tool and skill to work with new workspace structure.
 ## Changes Made
 
 ### 1. Updated Crawler Script
-**File:** `/home/ubuntu/openclaw-workspace/extensions/crawler-tool/openclaw-crawl-doc`
+**File:** `/home/ubuntu/openclaw-vault/extensions/crawler-tool/openclaw-crawl-doc`
 - Changed `DEFAULT_OUT_DIR` from:
   - OLD: `/home/ubuntu/openclaw-knowledge/inbox/dropzone`
-  - NEW: `/home/ubuntu/openclaw-workspace/00 - Inbox/Docs/dropzone`
+  - NEW: `/home/ubuntu/openclaw-vault/00 - Inbox/Docs/dropzone`
 
 ### 2. Created SKILL.md
-**File:** `/home/ubuntu/openclaw-workspace/extensions/crawler-tool/SKILL.md`
+**File:** `/home/ubuntu/openclaw-vault/extensions/crawler-tool/SKILL.md`
 - Documented full workflow and processing pipeline
 - Added usage examples (single, batch, custom filename)
 - Critical rules (no outDir override, only crawl requested URLs)
@@ -28,7 +28,7 @@ Update crawler tool and skill to work with new workspace structure.
   - Done: `00 - Inbox/Docs/_done/`
 
 ### 4. Added Pipeline README
-**File:** `/home/ubuntu/openclaw-workspace/00 - Inbox/Docs/README.md`
+**File:** `/home/ubuntu/openclaw-vault/00 - Inbox/Docs/README.md`
 - Documented the 4-stage pipeline
 - Command examples
 - File naming patterns

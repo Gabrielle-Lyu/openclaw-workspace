@@ -61,7 +61,7 @@ crawl_doc({
 ## Critical Rules
 
 **NEVER override `outDir`** — the tool's default is already correct:
-- `/home/ubuntu/openclaw-workspace/00 - Inbox/Docs/dropzone/`
+- `/home/ubuntu/openclaw-vault/00 - Inbox/Docs/dropzone/`
 
 **Only crawl URLs explicitly mentioned in the current request:**
 - ❌ Don't crawl URLs from earlier in the conversation

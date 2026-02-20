@@ -49,12 +49,31 @@ Sections:
 
 1. Save file to:
 
-`~/openclaw-workspace/20 - Knowledge/Research/stock-market-insight/YYYY-MM-DD.md`
+`~/openclaw-vault/20 - Knowledge/Research/stock-market-insight/YYYY-MM-DD.md`
 
 2. Post summary to Discord:
    - Channel: #market-insights (ClawValley server)
    - Channel ID: 1474308765682499666
-   - Format: 3-5 key highlights, each as a concise paragraph (not bullets)
+   - Format:
+     
+     **Market Intelligence Report (YYYY-MM-DD)**
+     
+     **📊 TLDR:**
+     [2-3 sentence executive summary of the day's market action]
+     
+     **📈 Key Points:**
+     • [Clear bullet point 1]
+     • [Clear bullet point 2]
+     • [Clear bullet point 3]
+     • [Clear bullet point 4-5 if needed]
+     
+     **🧠 My Take:**
+     [Your analytical perspective on what this means, why it matters, and what to watch]
+     
+     **💡 Investment Suggestions:**
+     • **Bullish on:** [Sectors/assets with rationale]
+     • **Cautious on:** [Sectors/assets to avoid with rationale]
+     • **Hedge with:** [Defensive positions/risk management]
 
 3. If markets closed:
 Output to Discord:

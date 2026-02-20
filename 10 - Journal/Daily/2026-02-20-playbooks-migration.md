@@ -9,8 +9,8 @@ Moved to `20 - Knowledge/Playbooks/` - the right semantic fit for reusable workf
 ## Changes Made
 
 ### 1. Files Moved
-From: `/home/ubuntu/openclaw-workspace/human-instruction/`
-To: `/home/ubuntu/openclaw-workspace/20 - Knowledge/Playbooks/`
+From: `/home/ubuntu/openclaw-vault/human-instruction/`
+To: `/home/ubuntu/openclaw-vault/20 - Knowledge/Playbooks/`
 
 Files migrated:
 - `daily-reflection.md`
@@ -25,7 +25,7 @@ Files migrated:
 
 **README.md (workspace):**
 - OLD: Human instructions: `/home/ubuntu/.openclaw/workspace/human-instruction/`
-- NEW: Playbooks (task instructions): `/home/ubuntu/openclaw-workspace/20 - Knowledge/Playbooks/`
+- NEW: Playbooks (task instructions): `/home/ubuntu/openclaw-vault/20 - Knowledge/Playbooks/`
 
 ### 3. Enhanced Documentation
 Created comprehensive `20 - Knowledge/Playbooks/README.md`:

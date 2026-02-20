@@ -35,9 +35,9 @@ Need to configure delivery to:
 ## Files to Update
 
 ### 1. Playbooks
-- `/home/ubuntu/openclaw-workspace/20 - Knowledge/Playbooks/market-intelligence.md`
-- `/home/ubuntu/openclaw-workspace/20 - Knowledge/Playbooks/ai-daily-briefing.md`
-- `/home/ubuntu/openclaw-workspace/20 - Knowledge/Playbooks/daily-research-summary.md` (if exists)
+- `/home/ubuntu/openclaw-vault/20 - Knowledge/Playbooks/market-intelligence.md`
+- `/home/ubuntu/openclaw-vault/20 - Knowledge/Playbooks/ai-daily-briefing.md`
+- `/home/ubuntu/openclaw-vault/20 - Knowledge/Playbooks/daily-research-summary.md` (if exists)
 
 ### 2. Cron Jobs
 - `stock-market-insight-daily` (cfd6d4a2) → #market-insights

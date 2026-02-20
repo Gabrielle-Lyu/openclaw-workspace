@@ -20,7 +20,7 @@ export default function register(api: any) {
         anyOf: [{ required: ["url"] }, { required: ["urls"] }]
       },
       async execute(_id: string, params: any) {
-        const script = "/home/ubuntu/openclaw-workspace/extensions/crawler-tool/openclaw-crawl-doc";
+        const script = "/home/ubuntu/openclaw-vault/extensions/crawler-tool/openclaw-crawl-doc";
 
         const urlList: string[] = Array.isArray(params.urls)
           ? params.urls.map((u: any) => String(u))

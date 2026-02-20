@@ -24,7 +24,7 @@ Reorganize the workspace to follow the obsidian-vault numbered folder structure.
 
 ### What Was Done
 
-1. Created new workspace structure at `/home/ubuntu/openclaw-workspace/`
+1. Created new workspace structure at `/home/ubuntu/openclaw-vault/`
    - 00 - Inbox (Requests + Docs)
    - 10 - Journal (Daily + Reflections)
    - 20 - Knowledge (Context, Decisions, Playbooks, Projects, Reference, Research)
@@ -41,12 +41,12 @@ Reorganize the workspace to follow the obsidian-vault numbered folder structure.
 
 ### Output Locations
 
-- **Main workspace:** `/home/ubuntu/openclaw-workspace/`
+- **Main workspace:** `/home/ubuntu/openclaw-vault/`
 - **Documentation:** 
-  - `/home/ubuntu/openclaw-workspace/README.md`
-  - `/home/ubuntu/openclaw-workspace/Workspace Constitution.md`
-  - `/home/ubuntu/openclaw-workspace/00 - Inbox/README.md`
-  - `/home/ubuntu/openclaw-workspace/extensions/crawler-tool/SKILL.md`
+  - `/home/ubuntu/openclaw-vault/README.md`
+  - `/home/ubuntu/openclaw-vault/Workspace Constitution.md`
+  - `/home/ubuntu/openclaw-vault/00 - Inbox/README.md`
+  - `/home/ubuntu/openclaw-vault/extensions/crawler-tool/SKILL.md`
 - **Git commits:** 
   - `0923e62` - Reorganize workspace
   - `66c352c` - Update crawler tool

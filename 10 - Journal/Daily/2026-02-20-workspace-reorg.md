@@ -4,7 +4,7 @@
 Merge `openclaw-knowledge` and reorganize `openclaw-workspace` following the obsidian-vault numbered folder structure.
 
 ## Outcome
-Successfully reorganized `/home/ubuntu/openclaw-workspace/` with new structure:
+Successfully reorganized `/home/ubuntu/openclaw-vault/` with new structure:
 
 ```
 openclaw-workspace/
