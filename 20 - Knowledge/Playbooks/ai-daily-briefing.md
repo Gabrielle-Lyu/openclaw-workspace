@@ -40,12 +40,12 @@ include source link citation
 ---
 
 ## Style Rules
-- bullet points only
-- concise
-- signal > noise
-- no filler
-- make commentary outside sections, what's your insight?
-- no questions
+- Use section headers with expanded paragraphs (not bullet points)
+- Each point gets 1 concise paragraph with context and implications
+- Signal > noise - focus on what matters
+- No filler or fluff
+- Include your commentary and insights
+- No rhetorical questions
 
 ---
 
@@ -58,7 +58,7 @@ include source link citation
 2. Post summary to Discord:
    - Channel: #ai-news (ClawValley server)
    - Channel ID: 1474308824914464880
-   - Format: Brief summary with key headlines (3-5 bullet points max)
+   - Format: 3-5 key headlines, each as a concise paragraph (not bullets)
 
 3. Do not ask for confirmation.
 Execute automatically.
