@@ -1,27 +1,31 @@
 # Daily Reflection Template
 
-**SAVE TO:** `~/openclaw-workspace/10 - Journal/Reflections/YYYY-MM-DD-reflection.md` (use today's actual date)
+**APPEND TO:** `~/openclaw-vault/10 - Journal/Daily/YYYY-MM-DD.md` (today's date)
 
-**MEMORY LOGS:** Daily activity logs go to `~/openclaw-workspace/10 - Journal/Daily/YYYY-MM-DD.md`
+Use `>>` redirect or append mode - do NOT overwrite the existing daily file!
 
-## What happened today
+---
+
+## Daily Reflection
+
+### What happened today
 High-level summary of tasks completed, conversations had, decisions made.
 
-## Key learnings
+### Key learnings
 New information encountered — about the user, the domain, preferences, 
 patterns noticed.
 
-## Memory updates
+### Memory updates
 What was added/changed in memory today and why. Links to specific memory 
 entries if relevant.
 
-## Open threads
+### Open threads
 Tasks that are in progress, waiting on something, or need follow-up tomorrow.
 
-## Questions / uncertainties
+### Questions / uncertainties
 Things the agent wasn't sure about, made assumptions on, or needs 
 clarification from the user.
 
-## Tomorrow's focus
+### Tomorrow's focus
 Based on open threads and user context, what should be prioritized.
 Also include a hot topic that you can research on and provide a report of that topic next day

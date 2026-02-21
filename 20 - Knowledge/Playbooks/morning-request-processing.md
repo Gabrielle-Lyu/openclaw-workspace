@@ -42,9 +42,11 @@ Write up results in clear, thoughtful prose.
 ## Output Format
 
 ```markdown
-# Self-Directed Research — YYYY-MM-DD
+---
 
-## Request 1: [Title]
+## Self-Directed Research
+
+### Request 1: [Title]
 
 **Original Question:** [From yesterday's file]
 
@@ -62,21 +64,19 @@ Write up results in clear, thoughtful prose.
 
 ---
 
-## Request 2: [Title]
+### Request 2: [Title]
 [Same structure]
 
 ---
 
-## Request 3: [Title]
+### Request 3: [Title]
 [Same structure]
 
 ---
 
-## Meta-Reflection
+### Meta-Reflection
 
 [1-2 paragraphs on the research process itself - what worked, what didn't, what surprised you]
-
----
 
 _Completed: YYYY-MM-DD 09:30 PST_
 ```
@@ -85,9 +85,11 @@ _Completed: YYYY-MM-DD 09:30 PST_
 
 ## Delivery Instructions
 
-1. Save to:
+1. **APPEND** (not create) to:
 
-`~/openclaw-workspace/10 - Journal/Daily/YYYY-MM-DD-self-research.md`
+`~/openclaw-vault/10 - Journal/Daily/YYYY-MM-DD.md`
+
+Use `>>` redirect or append mode - do NOT overwrite the existing daily file!
 
 2. Quality over speed
    - Take time to actually learn
