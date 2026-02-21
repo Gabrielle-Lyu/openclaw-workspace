@@ -1,125 +1,203 @@
-# TASK — Morning Request Processing
+# Morning Request Processing - Automatic Daily Research
 
-Run every day at 09:30 PST.
+**Run at:** 09:30 PST daily
+
+**IMPORTANT:** "Today" means the PST calendar day (00:00-23:59 PST), NOT UTC.
+
+---
 
 ## Objective
-Process yesterday's self-generated requests: research, think deeply, and document findings.
+
+Process all pending requests from both agent-generated and human-submitted folders automatically. Research topics deeply and document findings.
 
 ---
 
 ## Process
 
-1. **Read Yesterday's Requests**
+### Step 1: Find All Pending Requests
 
-Load file:
-`~/openclaw-workspace/30 - Automation/Logs/tomorrow-focus-[YESTERDAY].md`
+Check both folders:
+- `~/openclaw-vault/00 - Inbox/Requests/agent-request/*.md` (excluding processed-request subfolder)
+- `~/openclaw-vault/00 - Inbox/Requests/human-request/*.md` (excluding processed-request subfolder)
 
-If file doesn't exist → skip (nothing to process)
-
-2. **For Each Request**
-
-   a. **Research & Explore**
-   - Search the web for current information
-   - Read relevant docs or articles
-   - Gather data and perspectives
-   
-   b. **Deep Thinking**
-   - Analyze what you learned
-   - Connect to existing knowledge
-   - Form opinions and insights
-   
-   c. **Synthesize**
-   - What did you discover?
-   - What's useful or surprising?
-   - How does this help or change things?
-
-3. **Document Findings**
-
-Write up results in clear, thoughtful prose.
+If no requests found → exit silently (nothing to process)
 
 ---
 
-## Output Format
+### Step 2: For Each Request File
+
+#### A. Read the Request
+
+Parse the file to understand:
+- What needs to be researched or done
+- Why it matters
+- Suggested approach (if any)
+
+#### B. Execute / Research
+
+**For research requests:**
+- Search the web for current information
+- Read relevant documentation or articles
+- Gather multiple perspectives
+- Form opinions and insights
+
+**For action requests:**
+- Execute the requested task
+- Document the outcome
+- Note any blockers or issues
+
+#### C. Document Findings
+
+Create a research document in:
+
+`~/openclaw-vault/20 - Knowledge/Research/Daily Research/YYYY-MM-DD-<topic-slug>.md`
+
+Use today's PST date. Create a short slug from the topic title (lowercase, hyphens, no spaces).
+
+**Format:**
+
+```markdown
+# [Topic Title]
+
+**Date:** YYYY-MM-DD  
+**Source:** [agent-request | human-request]  
+**Original Request:** [Brief quote or summary of request]
+
+---
+
+## Research Summary
+
+[2-4 paragraphs covering what you learned, discovered, or accomplished]
+
+Write in clear, thoughtful prose. Show your thinking process.
+
+---
+
+## Key Insights
+
+- [Important takeaway 1]
+- [Important takeaway 2]
+- [Important takeaway 3]
+- [...]
+
+---
+
+## Practical Application
+
+[How this knowledge is useful or changes your approach. What can be done with this information.]
+
+---
+
+## Sources
+
+- [Link 1 - Title]
+- [Link 2 - Title]
+- [...]
+
+---
+
+## Meta-Reflection
+
+[Optional: 1-2 paragraphs on the research process - what worked, what surprised you, what was challenging]
+
+---
+
+_Completed: YYYY-MM-DD HH:MM PST_
+```
+
+---
+
+### Step 3: Mark Request as Processed
+
+After documenting findings, move the original request file to:
+
+**Agent requests:**  
+`~/openclaw-vault/00 - Inbox/Requests/agent-request/processed-request/YYYY-MM-DD-<original-filename>.md`
+
+**Human requests:**  
+`~/openclaw-vault/00 - Inbox/Requests/human-request/processed-request/YYYY-MM-DD-<original-filename>.md`
+
+Prepend today's date to the filename to track when it was processed.
+
+---
+
+## Output Summary
+
+After processing all requests, create a brief summary:
+
+`~/openclaw-vault/10 - Journal/Daily/YYYY-MM-DD.md`
+
+**APPEND** to today's journal (do not overwrite):
 
 ```markdown
 ---
 
-## Self-Directed Research
+## Morning Request Processing (9:30 AM PST)
 
-### Request 1: [Title]
+Processed [N] request(s):
 
-**Original Question:** [From yesterday's file]
+### [Topic 1 Title]
+- **Type:** [agent-request | human-request]
+- **Research file:** `20 - Knowledge/Research/Daily Research/YYYY-MM-DD-<slug>.md`
+- **Status:** ✅ Complete
 
-**Research Summary:**
-[2-3 paragraphs covering what you learned]
+### [Topic 2 Title]
+- **Type:** [agent-request | human-request]
+- **Research file:** `20 - Knowledge/Research/Daily Research/YYYY-MM-DD-<slug>.md`
+- **Status:** ✅ Complete
 
-**Key Insights:**
-[Bullet points of important takeaways]
-
-**Application:**
-[How this knowledge is useful or changes your approach]
-
-**Sources:**
-- [Links to articles, docs, etc.]
+[...]
 
 ---
 
-### Request 2: [Title]
-[Same structure]
-
----
-
-### Request 3: [Title]
-[Same structure]
-
----
-
-### Meta-Reflection
-
-[1-2 paragraphs on the research process itself - what worked, what didn't, what surprised you]
-
-_Completed: YYYY-MM-DD 09:30 PST_
+_Processed: YYYY-MM-DD 09:30 PST_
 ```
 
 ---
 
 ## Delivery Instructions
 
-1. **APPEND** (not create) to:
-
-`~/openclaw-vault/10 - Journal/Daily/YYYY-MM-DD.md`
-
-Use `>>` redirect or append mode - do NOT overwrite the existing daily file!
-
-2. Quality over speed
-   - Take time to actually learn
-   - Don't just summarize search results
-   - Form real opinions and insights
-
-3. No notification to user
-   - Silent execution
-   - This is internal development work
-   - User can read the journal entries if interested
-
-4. Do not ask for confirmation.
-Execute automatically.
+1. **Automatic execution** - no confirmation needed
+2. **Silent operation** - no notifications to user
+3. **Quality over speed** - take time to research properly
+4. **Be thorough** - don't just summarize search results, form real opinions and insights
+5. **Multiple requests** - process all pending requests in one run
 
 ---
 
-## Style
+## Style Guidelines
 
 - Conversational but substantial
 - Show your thinking process
 - Don't be afraid to say "I was wrong" or "This surprised me"
 - Genuine curiosity, not performative learning
 - Like explaining what you learned to a colleague
+- Connect findings to actual work when relevant
+
+---
+
+## Edge Cases
+
+**If a request is unclear:**
+- Do your best to interpret intent
+- Note uncertainties in the research doc
+- Still process it (don't skip)
+
+**If a request is outdated:**
+- Process it anyway for completeness
+- Note that context may have changed
+
+**If no requests exist:**
+- Exit silently
+- Do not create placeholder files
 
 ---
 
 ## Notes
 
-- This is **genuine research**, not busywork
-- If a request turns out uninteresting, pivot or skip it
-- Document dead ends too - they're valuable
-- Connect findings to actual work when relevant
-- Update skills, memory, or tools if you learn something useful
+- All times are PST unless explicitly stated otherwise
+- "Today" = current PST calendar day (00:00-23:59 PST)
+- Process BOTH agent-request and human-request folders
+- Each request gets its own research file in Daily Research
+- Original request files get moved to processed-request with date prefix
+- This is genuine research work, not busywork - aim for quality

@@ -2,43 +2,41 @@
 
 **Run at:** 23:50 PST daily
 
-**APPEND TO:** `~/openclaw-vault/10 - Journal/Daily/YYYY-MM-DD.md` (today's date in PST)
+**SAVE TO:** `~/openclaw-vault/10 - Journal/Reflections/YYYY-MM-DD-reflection.md` (today's date in PST)
 
-Use `>>` redirect or append mode - do NOT overwrite the existing daily file!
-
-**IMPORTANT:** "Today" means the PST calendar day (00:00 - 23:59 PST), NOT UTC.
+**IMPORTANT:** "Today" means the PST calendar day (00:00-23:59 PST), NOT UTC.
 
 ---
 
 ## Objective
 
-At the end of each day (23:50 PST), reflect on what happened today and plan tomorrow's focus.
+At the end of each day (23:50 PST), reflect on what happened today and generate tomorrow's focus areas.
 
 ---
 
 ## Part 1: Daily Reflection
 
-Append this section to today's daily journal:
+Save to: `~/openclaw-vault/10 - Journal/Reflections/YYYY-MM-DD-reflection.md`
 
 ```markdown
----
+# Daily Reflection — YYYY-MM-DD
 
-## Daily Reflection (End of Day)
-
-### What We Did Today
+## What We Did Today
 [High-level summary of tasks completed, conversations had, decisions made]
 
-### Key Findings & Takeaways
+## Key Findings & Takeaways
 [Important learnings, discoveries, or insights from today]
 
-### Memory Updates
+## Memory Updates
 [What was added/changed in memory files and why]
 
-### Open Threads
+## Open Threads
 [Tasks in progress, waiting on something, or need follow-up]
 
-### Questions / Uncertainties
+## Questions / Uncertainties
 [Things I'm unsure about or need clarification on]
+
+---
 
 _Reflected: YYYY-MM-DD 23:50 PST_
 ```
@@ -126,5 +124,5 @@ _Generated: YYYY-MM-DD 23:50 PST_
 
 - All times are PST unless explicitly stated otherwise
 - "Today" = current PST calendar day (00:00-23:59 PST)
-- Focus areas should feel genuinely worth exploring
-- Can be follow-up research, skill-building, trending topic analysis, or workflow improvements
+- Reflection goes to Reflections folder (not appended to daily journal)
+- Tomorrow's focus goes to agent-request folder for automatic processing at 9:30 AM PST
