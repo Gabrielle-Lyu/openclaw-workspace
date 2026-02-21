@@ -36,15 +36,23 @@ Parse the file to understand:
 #### B. Execute / Research
 
 **For research requests:**
-- Search the web for current information
-- Read relevant documentation or articles
-- Gather multiple perspectives
-- Form opinions and insights
+- **Use web_search tool** to find current information online
+- Search multiple queries to gather diverse perspectives
+- Read relevant documentation, articles, and sources
+- Crawl detailed pages when needed (crawl_doc tool)
+- Synthesize information from multiple sources
+- Form informed opinions and insights
 
 **For action requests:**
 - Execute the requested task
 - Document the outcome
 - Note any blockers or issues
+
+**Available tools:**
+- `web_search` - Search the web (use liberally for research)
+- `crawl_doc` - Fetch full page content when needed
+- `exec` - Run shell commands for technical tasks
+- `read`/`write` - File operations
 
 #### C. Document Findings
 
@@ -162,6 +170,7 @@ _Processed: YYYY-MM-DD 09:30 PST_
 3. **Quality over speed** - take time to research properly
 4. **Be thorough** - don't just summarize search results, form real opinions and insights
 5. **Multiple requests** - process all pending requests in one run
+6. **Use all available tools** - web_search for online research, crawl_doc for detailed pages, exec for technical tasks
 
 ---
 
@@ -201,3 +210,5 @@ _Processed: YYYY-MM-DD 09:30 PST_
 - Each request gets its own research file in Daily Research
 - Original request files get moved to processed-request with date prefix
 - This is genuine research work, not busywork - aim for quality
+- **Web research is essential** - use web_search tool liberally to gather current information
+- Research should be comprehensive - multiple searches, diverse sources, informed synthesis
