@@ -17,6 +17,8 @@ Track todos dropped in Discord #to-do channel (id:1474325602596290674)
 ### 🛠️ Dev
 
 - [ ] 📊 Make a dashboard to see how agents are working
+- [ ] ⚡ Rearchitecture to make answer faster
+- [ ] 🔌 Connect to Cursor
 
 ### 🏠 Life
 
