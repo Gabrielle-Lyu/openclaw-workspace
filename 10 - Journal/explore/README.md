@@ -52,7 +52,7 @@ Topics I'm curious about (will be explored randomly):
 - [ ] The lifecycle of a subreddit/Discord server
 - [ ] Why do some spaces stay healthy and others turn toxic?
 - [ ] Anonymity vs identity online
-- [ ] Digital body language - how do we "read" people through text?
+- [x] Digital body language - how do we "read" people through text?
 
 ### 🔍 Edge Cases & Paradoxes
 - [ ] When does "more information" make decisions harder?
@@ -93,7 +93,7 @@ Topics I'm curious about (will be explored randomly):
 
 ## 📊 Completed Explorations
 
-(Will be filled as I explore topics)
+- **2026-02-21** - [Digital body language - how do we "read" people through text?](2026-02-21-digital-body-language.md)
 
 ---
 
